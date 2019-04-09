@@ -26,7 +26,7 @@ then
 	if [[ -e "/etc/postfix/main.cf" ]]
 	then
 		echo "Testing every 1min ... an email will be sent when sucessfull"
-		while true; sleep 1m; do ping -c1 unix.com &> /dev/null && break; done && echo "Internet connectivity has resumed" | mail -s "Online $(date +%H:%M\ -\ %d\ %b\ %y)" mostert.k@gmail.com &> /dev/null && date && echo -e "${GREEN}Online${NC} ... internet_connection_test stopped" && echo "Internet restored on $(date)" >>/home/"$USER"/scripts.log
+		while true; sleep 1m; do ping -c1 unix.com &> /dev/null && break; done && echo "Internet connectivity has resumed" | mail -s "Online $(date +%H:%M\ -\ %d\ %b\ %y)" "you@gmail.com" &> /dev/null && date && echo -e "${GREEN}Online${NC} ... internet_connection_test stopped" && echo "Internet restored on $(date)" >>/home/"$USER"/scripts.log
 	else
 		
 		echo "Please install Postfix to use the m flag"
